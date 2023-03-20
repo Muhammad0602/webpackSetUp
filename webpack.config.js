@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const Swal = require('sweetalert2');
 
 module.exports = {
   entry: './src/index.js',
@@ -13,8 +14,8 @@ module.exports = {
   ],
   output: {
     filename: '[name].js',
-    path: __dirname + '/build',
-    chunkFilename: '[id].[chunkhash].js'
+    path: path.resolve(__dirname, 'dist'),
+    chunkFilename: '[id].[chunkhash].js',
   },
   module: {
     rules: [
@@ -32,4 +33,4 @@ module.exports = {
     runtimeChunk: 'single',
   },
   mode: 'development',
-}
+};
